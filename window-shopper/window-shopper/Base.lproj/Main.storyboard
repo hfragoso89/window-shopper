@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,25 +25,47 @@
                                     <constraint firstAttribute="width" constant="60" id="mdd-Fk-V88"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your hourly wage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdu-so-FUu" customClass="CurrencytextField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="84" y="181" width="246" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your hourly wage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdu-so-FUu" userLabel="hourlyWageTxt" customClass="CurrencytextField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="169" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BSC-Mp-1u5"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJP-Tq-Uaf" userLabel="priceTxt" customClass="CurrencytextField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="234" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HcG-HQ-Pps"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tdu-so-FUu" secondAttribute="trailing" constant="20" id="19B-oT-NjU"/>
+                            <constraint firstItem="PJP-Tq-Uaf" firstAttribute="top" secondItem="tdu-so-FUu" secondAttribute="bottom" constant="25" id="342-fO-yVh"/>
+                            <constraint firstItem="tdu-so-FUu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EB7-cM-gou"/>
+                            <constraint firstItem="tdu-so-FUu" firstAttribute="top" secondItem="T49-cb-YyL" secondAttribute="bottom" constant="35" id="FYw-FF-8W4"/>
                             <constraint firstItem="T49-cb-YyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FnS-uK-MRp"/>
                             <constraint firstItem="MRm-Wi-H7p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LKd-QS-RWo"/>
                             <constraint firstAttribute="bottom" secondItem="MRm-Wi-H7p" secondAttribute="bottom" id="QTI-mU-3mb"/>
+                            <constraint firstItem="PJP-Tq-Uaf" firstAttribute="trailing" secondItem="tdu-so-FUu" secondAttribute="trailing" id="QlX-2i-vYw"/>
                             <constraint firstItem="MRm-Wi-H7p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bCq-Lo-6ss"/>
+                            <constraint firstItem="PJP-Tq-Uaf" firstAttribute="leading" secondItem="tdu-so-FUu" secondAttribute="leading" id="rZx-em-4r9"/>
                             <constraint firstItem="T49-cb-YyL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="rkp-3I-Bgp"/>
+                            <constraint firstItem="PJP-Tq-Uaf" firstAttribute="height" secondItem="tdu-so-FUu" secondAttribute="height" id="wNU-sg-agh"/>
                             <constraint firstItem="MRm-Wi-H7p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wXg-da-bWL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="hourlyWageTxt" destination="tdu-so-FUu" id="uOF-bm-eFa"/>
+                        <outlet property="priceTxt" destination="PJP-Tq-Uaf" id="zPF-VY-Fj5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
